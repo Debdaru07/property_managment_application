@@ -51,7 +51,6 @@ class Routes {
 
   static Map<String, WidgetBuilder> get map => {
     login: (_) => const LoginScreen(),
-    // The rest will be added when screens are done:
     dashboard: (_) => const TenantDashboardScreen(),
     rentDetails: (_) => const RentDetailsScreen(),
     myQueries: (_) => const MyQueriesScreen(),

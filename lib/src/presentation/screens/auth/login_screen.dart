@@ -1,3 +1,5 @@
+import 'dart:developer' as console;
+
 import 'package:flutter/material.dart';
 import '../../../theme/app_spacing.dart';
 import '../../widgets/app_button.dart';
@@ -112,9 +114,10 @@ class _LoginScreenState extends State<LoginScreen> {
   void _onLogin() {
     // Later connect with Bloc
     // context.read<AuthBloc>().add(LoginEvent(email, password, role))
-    print("Role: $selectedRole");
-    print("Email: ${emailController.text}");
-    print("Password: ${passwordController.text}");
+    Navigator.pushReplacementNamed(context, "/dashboard");
+    console.log("Role: $selectedRole");
+    console.log("Email: ${emailController.text}");
+    console.log("Password: ${passwordController.text}");
   }
 
   /// Segment control widget
