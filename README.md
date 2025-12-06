@@ -45,7 +45,7 @@ Make sure you have:
 
 ## Setup
 
-Clone the repo:
+- Clone the repo:
 
 ```bash
 git clone https://github.com/<your-repo>/property-management-app.git
