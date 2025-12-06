@@ -1,16 +1,65 @@
-# property_management_solutions
+# Property Management App
 
-A new Flutter project.
+A clean and minimal Property Management application built with Flutter.
+It supports a 3-way login (Employee, Tenant, Landlord), a dashboard for tenants, home services, service request forms, queries/tickets, and a basic profile section.
 
-## Getting Started
+The design follows a clean white canvas theme with black and grey typography.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter 3.x
+- Dart
+- Provider/Riverpod (any state manager)
+- Backend: Any (Firebase/AWS/Node)
+- Deployment: Android + iOS
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Features
+
+- 3-Way Login (Employee / Tenant / Landlord)
+- Tenant Dashboard
+- MyGate-style Home Services
+- Service Request Form
+- Raise Query + Ticket History
+- Minimal UI theme
+- Cross-platform support
+
+---
+
+# Getting Started
+
+## Requirements
+
+Make sure you have:
+
+- Flutter SDK
+- Dart SDK
+- Xcode (for macOS/iOS)
+- Android Studio
+- Git
+
+---
+
+## Setup
+
+Clone the repo:
+
+```bash
+git clone https://github.com/<your-repo>/property-management-app.git
+cd property-management-app
+```
+
+- Install dependencies:
+
+```bash
+flutter pub get
+```
+
+- Run the app:
+
+```bash
+flutter run
+```
