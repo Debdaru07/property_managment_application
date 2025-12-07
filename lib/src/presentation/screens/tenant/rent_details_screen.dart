@@ -11,38 +11,27 @@ class RentDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundLight,
       appBar: const AppAppBar(title: "Rent Details"),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Current Summary Card
-            Container(
-              padding: const EdgeInsets.all(AppSpacing.md),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(AppSpacing.cardRadius),
-                border: Border.all(color: AppColors.border),
-              ),
-              child: Column(
-                children: [
-                  _row("Current Rent", "₹25,000"),
-                  _divider(),
-                  _row("Due Date", "05/08/2024"),
-                  _divider(),
-                  _status("Paid"),
-                ],
+            _summaryCard(),
+
+            const SizedBox(height: AppSpacing.lg),
+
+            Text(
+              "Payment History",
+              style: AppTypography.titleLarge.copyWith(
+                fontWeight: FontWeight.bold,
+                letterSpacing: -0.3,
               ),
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: AppSpacing.md),
 
-            Text("Payment History", style: AppTypography.titleMedium),
-
-            const SizedBox(height: 12),
-
-            /// History list
             Column(
               children: const [
                 PaymentHistoryTile(
@@ -51,14 +40,14 @@ class RentDetailsScreen extends StatelessWidget {
                   status: "Paid",
                   amount: "₹25,000",
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: AppSpacing.sm),
                 PaymentHistoryTile(
                   month: "June 2024",
                   date: "Paid on 05/06/2024",
                   status: "Paid",
                   amount: "₹25,000",
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: AppSpacing.sm),
                 PaymentHistoryTile(
                   month: "May 2024",
                   date: "Overdue by 3 days",
@@ -73,44 +62,82 @@ class RentDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _row(label, value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget _summaryCard() {
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: AppColors.backgroundLight,
+        borderRadius: BorderRadius.circular(AppSpacing.cardRadius),
+        border: Border.all(color: AppColors.border),
+      ),
+      child: Column(
         children: [
-          Text(label, style: AppTypography.body),
-          Text(value, style: AppTypography.body),
+          _row("Current Rent", "₹25,000"),
+          _divider(),
+          _row("Due Date", "05/08/2024"),
+          _divider(),
+          _statusRow(),
         ],
       ),
     );
   }
 
-  Widget _status(String value) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text("Payment Status", style: AppTypography.body),
-        Row(
-          children: [
-            Container(
-              width: 8,
-              height: 8,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.success,
-              ),
-            ),
-            const SizedBox(width: 6),
-            Text(
-              value,
-              style: AppTypography.body.copyWith(color: AppColors.success),
-            ),
-          ],
-        ),
-      ],
+  Widget _row(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            label,
+            style: AppTypography.bodySecondary.copyWith(fontSize: 14),
+          ),
+          Text(
+            value,
+            style: AppTypography.body.copyWith(fontWeight: FontWeight.w600),
+          ),
+        ],
+      ),
     );
   }
 
-  Widget _divider() => Divider(color: AppColors.border);
+  Widget _statusRow() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Payment Status",
+            style: AppTypography.bodySecondary.copyWith(fontSize: 14),
+          ),
+          Row(
+            children: [
+              Container(
+                width: 8,
+                height: 8,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.success,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                "Paid",
+                style: AppTypography.body.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.success,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _divider() => Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5),
+    child: Divider(color: AppColors.border.withOpacity(0.7), thickness: 0.75),
+  );
 }

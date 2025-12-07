@@ -193,10 +193,17 @@ class TenantDashboardScreen extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Icon(
-                                      Icons.expand_more,
-                                      size: 20,
-                                      color: AppColors.textSecondary,
+                                    InkWell(
+                                      onTap:
+                                          () => Navigator.pushNamed(
+                                            context,
+                                            Routes.rentDetails,
+                                          ),
+                                      child: Icon(
+                                        Icons.expand_more,
+                                        size: 20,
+                                        color: AppColors.textSecondary,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -205,7 +212,7 @@ class TenantDashboardScreen extends StatelessWidget {
                                   "₹1,25,000",
                                   style: AppTypography.titleLarge,
                                 ),
-                                const SizedBox(height: 6),
+                                const SizedBox(height: 4),
                                 Text(
                                   "Due Dec 15",
                                   style: AppTypography.bodySecondary,

@@ -32,12 +32,13 @@ class PaymentHistoryTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(month, style: AppTypography.body),
+                  const SizedBox(width: AppSpacing.sm),
                   Text(date, style: AppTypography.bodySecondary),
                 ],
               ),
             ],
           ),
-          Text(amount, style: AppTypography.body),
+          Text(amount, style: AppTypography.titleSmall),
         ],
       ),
     );
