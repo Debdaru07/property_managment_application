@@ -120,6 +120,7 @@ class TenantDashboardScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SizedBox(height: AppSpacing.md),
 
                     /// Landlord Card
                     CardBase(
@@ -159,7 +160,7 @@ class TenantDashboardScreen extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: AppSpacing.md),
+                    const SizedBox(height: AppSpacing.lg),
 
                     /// Rent cards row - same height
                     Row(
@@ -202,8 +203,9 @@ class TenantDashboardScreen extends StatelessWidget {
                                 const SizedBox(height: 6),
                                 Text(
                                   "₹1,25,000",
-                                  style: AppTypography.titleMedium,
+                                  style: AppTypography.titleLarge,
                                 ),
+                                const SizedBox(height: 6),
                                 Text(
                                   "Due Dec 15",
                                   style: AppTypography.bodySecondary,
@@ -244,7 +246,7 @@ class TenantDashboardScreen extends StatelessWidget {
                                 const SizedBox(height: 6),
                                 Text(
                                   "₹20,000",
-                                  style: AppTypography.titleMedium,
+                                  style: AppTypography.titleLarge,
                                 ),
                               ],
                             ),
@@ -254,6 +256,7 @@ class TenantDashboardScreen extends StatelessWidget {
                     ),
 
                     /// Services header
+                    const SizedBox(height: AppSpacing.md),
                     const SectionHeader(text: "Services & Requests"),
 
                     /// Services grid
