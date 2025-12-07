@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'card_base.dart';
 import '../../theme/app_typography.dart';
 import '../../theme/app_colors.dart';
+import '../../theme/app_spacing.dart';
 
 class ServiceCard extends StatelessWidget {
   final String title;
@@ -19,12 +20,17 @@ class ServiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardBase(
       onTap: onTap,
+      padding: const EdgeInsets.all(AppSpacing.md),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 36, color: AppColors.textPrimary),
-          const SizedBox(height: 8),
-          Text(title, style: AppTypography.body),
+          Icon(icon, size: 24, color: AppColors.iconGrey),
+          const SizedBox(height: 12),
+          Text(
+            title,
+            style: AppTypography.titleSmall,
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

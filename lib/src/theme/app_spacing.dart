@@ -10,7 +10,6 @@ class AppSpacing {
   static const double buttonHeight = 56;
 
   /// --- New Additions for Pixel-Perfect Login Layout ---
-
   static const double spacing64 = 64;
   static const double spacing48 = 48;
   static const double spacing20 = 20;
@@ -21,4 +20,7 @@ class AppSpacing {
   static const double inputPadding = 15;
   static const double formHorizontal = md;
   static const double formVertical = spacing12;
+
+  /// Dashboard small card min height (Rent cards, etc.)
+  static const double dashboardCardMinHeight = 112;
 }
