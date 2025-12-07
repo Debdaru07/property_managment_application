@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../main.dart';
 import '../../../theme/app_spacing.dart';
 import '../../../theme/app_typography.dart';
 import '../../../theme/app_colors.dart';
@@ -21,10 +22,13 @@ class TenantDashboardScreen extends StatelessWidget {
               /// Greeting Section
               Row(
                 children: [
-                  const CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Colors.black12,
-                    child: Icon(Icons.person),
+                  InkWell(
+                    onTap: () => Navigator.pushNamed(context, Routes.profile),
+                    child: const CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.black12,
+                      child: Icon(Icons.person, size: 24),
+                    ),
                   ),
                   const SizedBox(width: AppSpacing.md),
                   Column(

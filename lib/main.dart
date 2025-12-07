@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'src/presentation/screens/auth/login_screen.dart';
+import 'src/presentation/screens/profile/profile_screen.dart';
 import 'src/presentation/screens/queries/my_queries_screen.dart';
 import 'src/presentation/screens/queries/raise_new_query_screen.dart';
 import 'src/presentation/screens/tenant/dashboard_screen.dart';
@@ -42,6 +43,7 @@ class PropertyManagementApp extends StatelessWidget {
 /// Navigation + Routing
 class Routes {
   static const String login = "/login";
+  static const String profile = "/profile";
   static const String dashboard = "/dashboard";
   static const String rentDetails = "/rentDetails";
   static const String myQueries = "/myQueries";
@@ -57,5 +59,6 @@ class Routes {
     raiseQuery: (_) => const RaiseNewQueryScreen(),
     homeServices: (_) => const HomeServicesScreen(),
     requestService: (_) => const RequestServiceScreen(),
+    profile: (_) => const ProfileScreen(),
   };
 }
