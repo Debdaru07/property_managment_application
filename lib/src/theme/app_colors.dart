@@ -18,4 +18,5 @@ class AppColors {
   static const Color warning = Color(0xFFFFAC00);
 
   static const Color iconGrey = Color(0xFF8A8A8E);
+  static const Color skyline = Color(0xFF11B4D4);
 }

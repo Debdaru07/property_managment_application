@@ -147,7 +147,7 @@ class TenantDashboardScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(999),
                             child: CircleAvatar(
                               radius: 24,
-                              backgroundColor: AppColors.primary.withOpacity(
+                              backgroundColor: AppColors.skyline.withOpacity(
                                 0.15,
                               ),
                               child: const Icon(
