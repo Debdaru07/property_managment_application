@@ -24,11 +24,11 @@ class ServiceCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 24, color: AppColors.iconGrey),
+          Icon(icon, size: 28, color: AppColors.iconGrey),
           const SizedBox(height: 12),
           Text(
             title,
-            style: AppTypography.titleSmall,
+            style: AppTypography.titleMedium,
             textAlign: TextAlign.center,
           ),
         ],

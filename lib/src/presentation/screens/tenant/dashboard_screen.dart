@@ -265,8 +265,8 @@ class TenantDashboardScreen extends StatelessWidget {
                       shrinkWrap: true,
                       crossAxisCount: 2,
                       childAspectRatio: 1.2,
-                      mainAxisSpacing: AppSpacing.sm,
-                      crossAxisSpacing: AppSpacing.sm,
+                      mainAxisSpacing: AppSpacing.md,
+                      crossAxisSpacing: AppSpacing.md,
                       children: [
                         ServiceCard(
                           title: "Home Services",
