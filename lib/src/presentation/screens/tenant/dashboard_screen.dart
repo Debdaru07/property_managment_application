@@ -150,7 +150,7 @@ class TenantDashboardScreen extends StatelessWidget {
               GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 childAspectRatio: .95,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
