@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'src/presentation/screens/auth/login_screen.dart';
+import 'src/presentation/screens/employee/employee_dashboard.dart';
+import 'src/presentation/screens/landlord/landlord_dashboard.dart';
 import 'src/presentation/screens/profile/profile_screen.dart';
 import 'src/presentation/screens/queries/my_queries_screen.dart';
 import 'src/presentation/screens/queries/raise_new_query_screen.dart';
@@ -9,17 +11,8 @@ import 'src/presentation/screens/tenant/service_request_form.dart';
 import 'src/presentation/screens/tenant/services_screen.dart';
 import 'src/theme/app_theme.dart';
 
-/// NOTE:
-/// If you plan to use dependency injection,
-/// uncomment the await init() line.
-/// import 'src/injection_container.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  /// Setup DI (if needed now or later)
-  /// await init();
-
   runApp(const PropertyManagementApp());
 }
 
@@ -44,21 +37,28 @@ class PropertyManagementApp extends StatelessWidget {
 class Routes {
   static const String login = "/login";
   static const String profile = "/profile";
-  static const String dashboard = "/dashboard";
+  static const String tenantdashboard = "/dashboard";
   static const String rentDetails = "/rentDetails";
   static const String myQueries = "/myQueries";
   static const String raiseQuery = "/raiseQuery";
   static const String homeServices = "/homeServices";
   static const String requestService = "/requestService";
 
+  // employee :-
+  static const String employeeDashboard = "/employeeDashboard";
+  // landlord :-
+  static const String landlordDashboard = "/landlordDashboard";
+
   static Map<String, WidgetBuilder> get map => {
     login: (_) => const LoginScreen(),
-    dashboard: (_) => const TenantDashboardScreen(),
+    tenantdashboard: (_) => const TenantDashboardScreen(),
     rentDetails: (_) => const RentDetailsScreen(),
     myQueries: (_) => const MyQueriesScreen(),
     raiseQuery: (_) => const RaiseNewQueryScreen(),
     homeServices: (_) => const HomeServicesScreen(),
     requestService: (_) => const RequestServiceScreen(),
     profile: (_) => const ProfileScreen(),
+    employeeDashboard: (_) => EmployeeDashboard(),
+    landlordDashboard: (_) => LandlordDashboard(),
   };
 }
