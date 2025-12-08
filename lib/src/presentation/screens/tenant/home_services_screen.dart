@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 import '../../widgets/app_appbar.dart';
-import '../../widgets/service_card.dart';
 import '../../../theme/app_spacing.dart';
 import '../../../theme/app_typography.dart';
+import 'home_service_request_form.dart';
 
 class HomeServicesScreen extends StatelessWidget {
   const HomeServicesScreen({super.key});
+
+  void _openServiceForm(
+    BuildContext context,
+    String serviceName,
+    IconData icon,
+  ) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder:
+            (_) => RequestServiceScreen(
+              serviceName: serviceName,
+              serviceIcon: icon,
+            ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +30,7 @@ class HomeServicesScreen extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Scaffold(
-      appBar: const AppAppBar(title: "Home Services"), // BACK BUTTON + TITLE
+      appBar: const AppAppBar(title: "Home Services"),
 
       body: Stack(
         children: [
@@ -52,7 +69,6 @@ class HomeServicesScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // Search Bar
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
@@ -88,77 +104,29 @@ class HomeServicesScreen extends StatelessWidget {
                       childAspectRatio: 1,
                       physics: const BouncingScrollPhysics(),
                       children: [
-                        ServiceCard(
-                          title: "Plumber",
-                          icon: Icons.plumbing,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
+                        _serviceCard(context, "Plumber", Icons.plumbing),
+                        _serviceCard(
+                          context,
+                          "Electrician",
+                          Icons.electrical_services,
                         ),
-                        ServiceCard(
-                          title: "Electrician",
-                          icon: Icons.electrical_services,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
+                        _serviceCard(context, "Carpenter", Icons.carpenter),
+                        _serviceCard(
+                          context,
+                          "Cleaner",
+                          Icons.cleaning_services,
                         ),
-                        ServiceCard(
-                          title: "Carpenter",
-                          icon: Icons.carpenter,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
+                        _serviceCard(context, "Painter", Icons.format_paint),
+                        _serviceCard(context, "AC Repair", Icons.ac_unit),
+                        _serviceCard(
+                          context,
+                          "Pest Control",
+                          Icons.pest_control,
                         ),
-                        ServiceCard(
-                          title: "Cleaner",
-                          icon: Icons.cleaning_services,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
-                        ),
-                        ServiceCard(
-                          title: "Painter",
-                          icon: Icons.format_paint,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
-                        ),
-                        ServiceCard(
-                          title: "AC Repair",
-                          icon: Icons.ac_unit,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
-                        ),
-                        ServiceCard(
-                          title: "Pest Control",
-                          icon: Icons.pest_control,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
-                        ),
-                        ServiceCard(
-                          title: "RO/Water Filter",
-                          icon: Icons.water_drop,
-                          onTap:
-                              () => Navigator.pushNamed(
-                                context,
-                                "/requestService",
-                              ),
+                        _serviceCard(
+                          context,
+                          "RO/Water Filter",
+                          Icons.water_drop,
                         ),
                       ],
                     ),
@@ -168,6 +136,32 @@ class HomeServicesScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _serviceCard(BuildContext context, String title, IconData icon) {
+    return GestureDetector(
+      onTap: () => _openServiceForm(context, title, icon),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade300),
+        ),
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 36, color: Colors.black),
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: AppTypography.body.copyWith(fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
