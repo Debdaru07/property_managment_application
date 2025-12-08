@@ -6,6 +6,7 @@ import 'src/presentation/screens/profile/profile_screen.dart';
 import 'src/presentation/screens/queries/my_queries_screen.dart';
 import 'src/presentation/screens/queries/raise_new_query_screen.dart';
 import 'src/presentation/screens/tenant/dashboard_screen.dart';
+import 'src/presentation/screens/tenant/notification_screen.dart';
 import 'src/presentation/screens/tenant/rent_details_screen.dart';
 import 'src/presentation/screens/tenant/home_service_request_form.dart';
 import 'src/presentation/screens/tenant/home_services_screen.dart';
@@ -43,7 +44,7 @@ class Routes {
   static const String raiseQuery = "/raiseQuery";
   static const String homeServices = "/homeServices";
   static const String requestService = "/requestService";
-
+  static const String notificationScreen = "/notificationScreen";
   // employee :-
   static const String employeeDashboard = "/employeeDashboard";
   // landlord :-
@@ -60,5 +61,6 @@ class Routes {
     profile: (_) => const ProfileScreen(),
     employeeDashboard: (_) => EmployeeDashboard(),
     landlordDashboard: (_) => LandlordDashboard(),
+    notificationScreen: (_) => NotificationScreen(),
   };
 }

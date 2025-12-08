@@ -87,7 +87,11 @@ class TenantDashboardScreen extends StatelessWidget {
                             clipBehavior: Clip.none,
                             children: [
                               InkWell(
-                                onTap: () {},
+                                onTap:
+                                    () => Navigator.pushNamed(
+                                      context,
+                                      Routes.notificationScreen,
+                                    ),
                                 borderRadius: BorderRadius.circular(999),
                                 child: const Icon(
                                   Icons.notifications_none,
