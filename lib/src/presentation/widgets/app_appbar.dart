@@ -21,6 +21,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       automaticallyImplyLeading: false,
       title: Text(title, style: AppTypography.titleMedium),
+      backgroundColor: AppColors.backgroundLight,
       leading:
           canGoBack
               ? IconButton(

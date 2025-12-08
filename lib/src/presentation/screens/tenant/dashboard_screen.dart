@@ -89,14 +89,10 @@ class TenantDashboardScreen extends StatelessWidget {
                               InkWell(
                                 onTap: () {},
                                 borderRadius: BorderRadius.circular(999),
-                                child: CircleAvatar(
-                                  radius: 20,
-                                  backgroundColor: AppColors.textPrimary,
-                                  child: const Icon(
-                                    Icons.notifications_none,
-                                    size: 22,
-                                    color: AppColors.textWhite,
-                                  ),
+                                child: const Icon(
+                                  Icons.notifications_none,
+                                  size: 28,
+                                  color: AppColors.backgroundDark,
                                 ),
                               ),
                               Positioned(
