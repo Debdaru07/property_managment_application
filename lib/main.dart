@@ -7,8 +7,8 @@ import 'src/presentation/screens/queries/my_queries_screen.dart';
 import 'src/presentation/screens/queries/raise_new_query_screen.dart';
 import 'src/presentation/screens/tenant/dashboard_screen.dart';
 import 'src/presentation/screens/tenant/rent_details_screen.dart';
-import 'src/presentation/screens/tenant/service_request_form.dart';
-import 'src/presentation/screens/tenant/services_screen.dart';
+import 'src/presentation/screens/tenant/home_service_request_form.dart';
+import 'src/presentation/screens/tenant/home_services_screen.dart';
 import 'src/theme/app_theme.dart';
 
 void main() async {
